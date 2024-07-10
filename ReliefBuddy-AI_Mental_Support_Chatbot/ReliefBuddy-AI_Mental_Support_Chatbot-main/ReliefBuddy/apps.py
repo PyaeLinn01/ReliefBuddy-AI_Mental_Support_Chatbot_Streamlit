@@ -9,6 +9,11 @@ from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
 import os
 
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+nltk.download('averaged_perceptron_tagger')
+
 sys.stdout.reconfigure(encoding='utf-8')
 app = Flask(__name__)
 
