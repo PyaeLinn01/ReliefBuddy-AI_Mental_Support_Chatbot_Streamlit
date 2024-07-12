@@ -6,6 +6,7 @@ import numpy as np
 import nltk
 import sys
 from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet, stopwords
 from tensorflow.keras.models import load_model
 import os
 
@@ -18,6 +19,8 @@ sys.stdout.reconfigure(encoding='utf-8')
 app = Flask(__name__)
 
 lemmatizer = WordNetLemmatizer()
+stop_words = set(stopwords.words('english'))
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 model = load_model(os.path.join(current_dir, 'chatbot_model.keras'))
